@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>while문</h1>
+</body>
+</html>
+<script>
+    i=1; //초기상태
+    while(i<=10){ // 조건식
+        console.log( "i=", i);
+        i+=1 // 조건식의 결과가 false가 되게 하는 수식을 마지막에 붙이도록
+    }
+
+
+    //1~n까지의 합계를 구한다. 합계가 1000이 넘는 n을 구하자!
+    i = 1; 
+    sum = 0;
+    while(sum < 1000) {
+        i += 1;
+        sum += i;
+    }
+    console.log( i, sum);
+</script>

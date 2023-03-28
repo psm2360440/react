@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>객체(JSON)</h1>
+</body>
+</html>
+<script>
+    let person = {"name":"박선미", age:34, phone:"010-7917-7197", add:"중구 서문로 96 센트럴파크", lang:"kor", "ko": 90, "eng": 100, "math":99};
+    person.total = person.name + person.phone + person.add;
+    person.subtotal = person["name"] + person["phone"];
+    //  객체의 키값을 정의할 때에는 "쌍따옴표" 생략이 가능하지만,
+    //  객체에 접근하기 위하여 person["키"] 처럼 대괄호 안에서는
+    //  쌍따옴표 생략이 불가능하다
+    //  생략하면 undefined 로 나옴~
+
+    
+    console.log(person.name + person.add);
+    console.log(person["name"] + person["add"]);
+    console.log(person)
+    console.log(person.total);
+    console.log(person.subtotal);
+    console.log(`${person.name}님의 전화번호는 ${person.phone}으로 확인되었습니다!`)
+</script>
