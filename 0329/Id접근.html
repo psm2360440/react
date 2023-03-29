@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ID속성을 사용한 접근</h1>
+    <h1 id = "title1">제목줄1</h1>
+    <h1 id = "title2">제목줄2</h1>
+    <h1 id = "title3">제목줄3</h1>
+</body>
+</html>
+<script>
+    document.getElementById('title1').innerHTML="첫번째 제목";
+    document.getElementById('title2').innerHTML="두번째 제목";
+    document.getElementById('title3').innerHTML="세번째 제목";
+
+    let ids = ["title1", "title2", "title3"];
+    for(i=0; i<ids.length; i++){
+        document.getElementById(ids[i]).style.color="#ff0000"
+    };
+</script>

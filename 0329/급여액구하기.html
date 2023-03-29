@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>급여액구하기</h1>
+    name: <input type = "text" name = "yourName" id = "yourName"><br/>
+    hours: <input type = "text" name = "hours" id = "hours"><br/>
+    payPerHours: <input type = "text" name = "payPerHours" id = "payPerHours"><br/>
+
+    <button type = "text" onclick="cal(1)">기본급</button>&nbsp;&nbsp;
+    <button type = "text" onclick="cal(2)">초과수당</button>&nbsp;&nbsp;
+    <button type = "text" onclick="cal(3)">합계액</button>&nbsp;&nbsp;
+
+    result : <span id = "result"></span>
+
+</body>
+</html>
+<script>
+    //문제2) 이름, 일주일간 근무시간, 시간당 급여액을 입력받아 주급을 계산
+    //단, 20시간 초과 근무시 초과근무에 대해서는 초과수당 지급
+    //초과수당은 시간당급여액의 50%입니다.
+    //근무시간 : 30 <- input 태그
+    //시간당급여액: 20000 <-input 태그
+    //기본급: 600000 초과수당: 100000 합:  700000 <-span 태그
+
+    function cal(put){
+        hours = document.getElementById("hours").value;
+        pay = document.getElementById("payPerHours").value;
+
+        if(parseInt(hours)<20){
+            if(put =="1"){
+                result = parseInt(hours) * parseInt(pay);
+                document.getElementById("result").innerHTML = result;
+            } else if(put == "2"){
+                document.getElementById("result").innerHTML = "없습니다!"
+            } else {
+                result = parseInt(hours) * parseInt(pay);
+                document.getElementById("result").innerHTML = result;
+            }
+        } else {
+            if(put=="1"){
+                result = 20 * parseInt(pay);
+                document.getElementById("result").innerHTML = result;
+            } else if(put =="2"){
+                result = (parseInt(hours) -20 ) * parseInt(pay) * 1.5;
+                document.getElementById("result").innerHTML = result;
+            } else {
+                result = (20 * parseInt(pay)) + ((parseInt(hours) -20 ) * parseInt(pay) * 1.5);
+                document.getElementById("result").innerHTML = result;
+            }
+        }
+    }
+</script>

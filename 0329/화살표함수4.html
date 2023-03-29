@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>화살표함수(이차원배열)</h1>
+</body>
+</html>
+<script>
+    let nums = [10,20,30,40,50,60,70,80,90,100];
+
+    // 배열의 요소, index 자바스크립트가 제공하는 람다들이 이 구조
+    nums.map( ( x, i)=>{
+        console.log(i,x);
+        return x;
+    });
+
+    //2차원의 경우
+    //map 함수는 무조건 리턴을 하도록 되어 있음..
+    nums = [[10,20,30], [40,50,60], [70,80,90]];
+    result = nums.map ( (x, i)=>{
+        x.map((y,j)=>{
+            console.log(i,j,y);
+            // console.log(j,y);
+            return y;
+        })
+        // console.log(i,x);
+        return x;
+    });
+    console.log( result );
+</script>

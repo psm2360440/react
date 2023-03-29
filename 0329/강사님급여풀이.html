@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>급여액구하기</h1>
+    name: <input type = "text" name = "yourName" id = "yourName"><br/>
+    hours: <input type = "text" name = "hours" id = "hours"><br/>
+    payPerHours: <input type = "text" name = "payPerHours" id = "payPerHours"><br/>
+
+    <button type = "button" onclick="goCal()">계산</button>&nbsp;&nbsp;
+    <button type = "button" onclick = "goClear()">새로입력</button><br/>
+
+    <div id = "result"></div>
+</body>
+</html>
+<script>
+     //강사님 풀이
+     function goCal(){
+        name = document.getElementById("yourName").value;
+        worktime = document.getElementById("hours").value;
+        perpay = document.getElementById("payPerHours").value;
+        worktime = parseInt(worktime);
+        perpay = parseInt(perpay);
+
+        base_pay = worktime * perpay;
+
+        over_pay = 0;
+        if(worktime>20){
+            over_pay = (worktime-20)*per_pay/2;
+        }
+
+        temp = `${name}님의 기본급은 ${base_pay}원이고 수당은 ${over_pay}원, 총액은 ${base_pay+over_pay}원 입니다.`;
+        document.getElementById("result").innerHTML = temp;
+    }
+
+    function goClear(){
+        document.getElementById("yourName").value = "";
+        document.getElementById("hours").value = "";
+        document.getElementById("payPerHours").value = "";
+        document.getElementById("result").innerHTML = "";
+    }
+</script>

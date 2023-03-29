@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type = "button" onclick = "goDisplay()">함수선언식</button></br>
+    <button type = "button" id = "btnPress">함수표현식</button>
+    <button type = "button" id = "btnPress2">화살표함수</button>
+    <!--
+        <input type = "submit">  무조건 서버로 정보를 전송한다.
+        <button>누르세용</button>
+
+
+        <input type = "button">  이벤트만 발생시킨다.
+        <button type = "button">누르세용</button>
+    -->
+</body>
+</html>
+<script>
+    //함수 선언
+    function goDisplay(){
+        alert("button 눌림");
+    }
+
+    //초창기에는 script를 header에 놓았음
+    //버튼 객체 있는데 나중에 함수를 붙인다.
+    window.onload=function(){
+        document.getElementById("btnPress").addEventListener('click',
+        function(){
+        alert("또 누르셨네유~");
+        });
+
+        document.getElementById("btnPress2").addEventListener('click',
+        ()=>{
+        alert("화살표~");
+        });
+
+
+
+    };
+    
+    //함수표현식 VS 함수선언문
+
+</script>

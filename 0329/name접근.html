@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type = "text" name = "number" value = "10"><br/>
+    <input type = "text" name = "number" value = "20"><br/>
+    <input type = "text" name = "number" value = "30"><br/>
+    <input type = "text" name = "number" value = "40"><br/>
+    <input type = "text" name = "number" value = "50"><br/>
+
+    <input type = "text" name = "result" value = ""><br/>
+</body>
+</html>
+<script>
+    //  name속성은 input태그류만 있어서 그밖의 태그는 사용하지 못 한다.
+    var numbers = document.getElementsByName("number");
+    var result = document.getElementsByName("result");
+    //  실제로 같은 이름의 태그가 있는지는 중요하지 않다.
+    //  name속성은 무조건 배열로 읽어온다.
+
+    // sum = 0;
+    // for(i=0; i<numbers.length; i++){
+    //     sum = sum + parseInt(numbers[i].value);
+    // }
+
+    let sum = 0;
+    numbers.forEach( (n)=>{
+        sum +=parseInt(n.value);
+    });
+
+    result[0].value = "합계 : " + sum;
+
+</script>

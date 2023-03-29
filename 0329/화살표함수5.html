@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>화살표함수5</h1>
+</body>
+</html>
+<script>
+    let rect=[
+        {w:5, h:4},
+        {w:15, h:14},
+        {w:7, h:8},
+        {w:9, h:4},
+        {w:5, h:7}
+    ];
+
+    //map
+    let r = rect.map( (r)=>{
+        r.len = (r.w+r.h)*2;
+        r.surface = (r.w*r.h);
+        return r;
+    });
+    console.log(r);
+    console.log(rect);
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button type = "button" onclick="buttonPress()">누르기</button>
+    <span id = "result"></span> -->
+
+    x: <input type = "text" name = "xvalue" id = "xvalue"><br/>
+    y: <input type = "text" name = "yvalue" id = "yvalue"><br/>
+
+    <button type = "text" onclick="add()">+</button><br/>
+    <span id="result"></span>
+</body>
+</html>
+<script>
+    // function buttonPress(){
+    //     document.getElementById("result").innerHTML="<h1>버튼눌림</h1>";
+    // };
+
+    function add(){
+        //1. 데이터를 태그로부터 읽어온다.
+        x = document.getElementById("xvalue").value;
+        y = document.getElementById("yvalue").value;
+
+        //2. 연산한다.
+        result = parseInt(x) + parseInt(y);
+
+        //3. 출력한다.
+        document.getElementById("result").innerHTML = result;
+    };
+</script>
