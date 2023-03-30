@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table width="80%">
+        <colgroup>
+            <col width="25%">
+            <col width="25%">
+            <col width="25%">
+            <col width="25%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>품목</th>
+                <th>가격</th>
+                <th>제조사</th>
+                <th>제조일</th>
+            </tr>
+        </thead>
+        <tbody id = "mytable">      
+        </tbody>
+    </table>
+    <script>
+        let data = [
+            {"product_name":"새우깡", "product_price":"5000", "manufacturer":"농심", "date":"2023-03-20"},
+            {"product_name":"새우깡", "product_price":"5000", "manufacturer":"농심", "date":"2023-03-20"},
+            {"product_name":"새우깡", "product_price":"5000", "manufacturer":"농심", "date":"2023-03-20"},
+            {"product_name":"새우깡", "product_price":"5000", "manufacturer":"농심", "date":"2023-03-20"},
+            {"product_name":"새우깡", "product_price":"5000", "manufacturer":"농심", "date":"2023-03-20"},
+            {"product_name":"새우깡", "product_price":"5000", "manufacturer":"농심", "date":"2023-03-20"},
+            {"product_name":"새우깡", "product_price":"5000", "manufacturer":"농심", "date":"2023-03-20"}
+        ];
+
+        function loadData(){
+            tbody = document.getElementById("mytable");
+            for (item of data){
+                let row = tbody.insertRow( tbody.rows.length );
+                let cell1 = row.insertCell(0);
+                let cell2 = row.insertCell(1); 
+                let cell3 = row.insertCell(2); 
+                let cell4 = row.insertCell(3);
+
+                cell1.innerHTML = item.product_name;
+                cell1.innerHTML = item.product_price;
+                cell1.innerHTML = item.manufacturer
+                cell1.innerHTML = item.date;
+
+            }
+        }
+
+        loadData();
+    </script>
+</body>
+</html>

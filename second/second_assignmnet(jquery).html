@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+</head>
+<body>
+    <h1>Second Assignment</h1>
+    이름 : <input type = "text" id = "name"><br/>
+    국어 : <input type = "text" id = "korean"><br/>
+    영어 : <input type = "text" id = "english"><br/>
+    수학 : <input type = "text" id = "math"><br/>
+    <button type = "button" id = "btnCal">결과확인</button><br/>
+    
+    <div id = "result"></div><br/>
+
+</body>
+</html>
+<script>
+
+    $(document).ready( ()=>{
+        $("#btnCal").click( ()=>{
+            //입력 값 받아오기
+            name = $("#name").val();
+            kor = parseInt($("#korean").val());
+            eng = parseInt($("#english").val());
+            mat = parseInt($("#math").val());
+
+            //sum: 총점, avg: 평균
+            sum = kor + eng + mat;
+            avg = sum/3;
+
+            //div태그에 출력될 메시지
+            msg = `${name}님의 총점은 ${sum}점 평균은 ${avg}점 입니다! 고생하셨습니다~!`;
+            $("#result").html(msg);
+        });
+    });
+</script>

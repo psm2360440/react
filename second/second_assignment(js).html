@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Second Assignment</h1>
+    이름 : <input type = "text" id = "name"><br/>
+    국어 : <input type = "text" maxlength = "3" id = "korean" oninput = "goInput(this)"><br/>
+    영어 : <input type = "text" maxlength = "3" id = "english" oninput = "goInput(this)"><br/>
+    수학 : <input type = "text" maxlength = "3" id = "math" oninput = "goInput(this)"><br/>
+    <button type = "button" id = "btnCal">결과확인</button><br/>
+    
+    <div id = "result"></div><br/>
+
+</body>
+</html>
+<script>
+    window.onload=()=>{
+        document.getElementById("btnCal").addEventListener("click", goCal);
+    }
+
+    //숫자외의 키 입력 막기
+    function goInput(me){
+        me.value = me.value.replace(/[^0-9]/g, '');
+    }
+
+    //계산 함수
+    goCal=()=>{
+        //입력 값 받아오기
+        name = document.getElementById("name").value;
+        kor = document.getElementById("korean").value;
+        eng = document.getElementById("english").value;
+        mat = document.getElementById("math").value;
+        kor = parseInt(kor);
+        eng = parseInt(eng);
+        mat = parseInt(mat);
+        //세 과목 중, 하나라도 100점 초과일 시 함수 종료
+        if(kor>100||eng>100||mat>100){
+            alert("100점까지만 입력가능합니다!");
+            //입력창 값 초기화
+            document.getElementById("name").value = "";
+            document.getElementById("korean").value = "";
+            document.getElementById("english").value = "";
+            document.getElementById("math").value = "";
+            return false;
+        } else {
+            //sum: 총점, avg:  평균
+            sum = kor + eng + mat;
+            avg = sum/3;
+
+            //출력 메시지
+            msg = `${name}님의 총점은 ${sum}점 평균은 ${avg}점 입니다! 고생하셨습니다~!`;
+            document.getElementById("result").innerHTML = msg;
+        }
+    }
+</script>
