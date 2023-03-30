@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <button type="button" id = "btn1" style="background-color: rgb(166, 246, 246)">배경색</button></br>
+    <button type="button" id = "btn2" style="background-color: rgb(150, 150, 252)">배경색</button></br>
+    <button type="button" id = "btn3" style="background-color: rgb(233, 146, 146)">배경색</button></br>
+    <button type="button" id = "btn4" style="background-color: rgb(225, 175, 225)">배경색</button></br>
+    <button type="button" id = "btn5" style="background-color: rgb(148, 217, 149)">배경색</button></br>
+    <button type="button" id = "btn6" style="background-color: moccasin">배경색</button></br>
+    <button type="button" id = "btn7" style="background-color: rgb(214, 149, 149)">배경색</button></br>
+</body>
+</html>
+<script>
+    //여러개의 버튼이 하나의 함수를 공유할 때 매개변수를 붙이면 이벤트가 발생한 객체를 전달한다.
+
+    $(document).ready( ()=>{
+        $("#button").click( (btn)=>{
+            console.log(btn);
+            // $("body").css("background-color", 
+            //     $("#btn1").css("background-color"));
+            $("body").css("background-color",
+                    btn.target.style.backgroundColor);
+            // $("body").css("background-color",
+            //     $("#"+btn.target.id).css("background-color"));
+        })
+
+
+    })
+
+
+
+
+
+
+
+    // function changeBackground(me){
+
+    //     //  event : 자바스크립트가 제공하는 내장객체, 발생한 이벤트에 대한 모든 정보를 갖고 있다.
+    //     console.log(event.target.id);
+    //     body = document.getElementsByTagName("body");
+    //     //getElementsByTagName으로 태그명으로 가져오면 배열에 담겨서 나옴.
+    //     //body 태그는 어차피 하나니까 body[0]으로 적음 (그냥 'body'로 하면 안 나옴) 
+    //     body[0].style.backgroundColor=me.style.backgroundColor;
+    // }
+
+</script>

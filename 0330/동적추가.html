@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>동적으로 테이블 태그 생성하기</h1>
+    <button type = "button" id = "btnAdd">추가</button>&nbsp;&nbsp;
+    <button type = "button" id = "btnDel">삭제</button><br/>
+
+    <table style = "width:80%; margin:auto; border:rgb(161, 206, 240) 1px solid">
+    <!-- 해상도가 다르기 때문에 퍼센트로 너비를 줄 것! -->
+        <!-- 열별로 스타일 지정하기 위한 목적-->
+    <colgroup>
+            <col style = "width:33%">
+            <col style = "width:33%">
+            <col style = "width:33%">
+        </colgroup>
+        <thead>
+            <th>품목</th>
+            <th>수량</th>
+            <th>단가</th>
+        </thead>
+        <tbody id = "tbody">
+            <tr>
+                <td><input type = "text" name = "product_name"></td>
+                <td><input type = "text" name = "product_count"></td>
+                <td><input type = "text" name = "product_price"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+<script>
+    // let data = [
+    //     {name:"벼볌벼", count:275, price:1000},
+    //     {name:"배뱀배", count:180, price:900},
+    //     {name:"별난바", count:200, price:1000},
+    //     {name:"알껌바", count:250, price:800},
+    //     {name:"서주아이스", count:100, price:650},
+    //     {name:"아맛나", count:80, price:700}
+    // ];
+
+    window.onload=()=>{
+        document.getElementById("btnAdd").addEventListener("click", goAdd);
+        document.getElementById("btnDel").addEventListener("click", goDel);
+    }
+
+    function goAdd(){
+        tbody = document.getElementById("tbody");
+        console.log(tbody.rows.length); //  데이터 개수 확인
+        // for(i in data){
+            row = tbody.insertRow(tbody.rows.length);   //맨 아래에 새로운 행 추가
+            cell1 = row.insertCell(0);  //  새로운 셀 추가
+            cell2 = row.insertCell(1);
+            cell3 = row.insertCell(2);
+            cell1.innerHTML = '<input type = "text" name = "product_name">';
+            cell2.innerHTML = '<input type = "text" name = "product_count">';
+            cell3.innerHTML = '<input type = "text" name = "product_name">';
+        // }
+    }
+
+    function goDel(){
+        tbody = document.getElementById("tbody");
+        if(tbody.rows.length>1)
+            tbody.deleteRow(tbody.rows.length-1); //index이기 때문에 '-1'해주어야 함.
+        else
+            alert("더 이상 삭제가 불가능합니다.");
+    }
+</script>

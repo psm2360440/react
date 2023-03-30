@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>문자열형.html</h1>
+</body>
+</html>
+<script>
+    let str1 = "알파코";
+    let str2 = "단일따옴표";
+    let str3 = `백틱${str1} ${str2}`;
+
+    console.log(str1);
+    console.log(str2);
+    console.log(str3);
+
+    let name = "홍길동";
+    let age = 34;
+    let address = "서울시 관악구 대학동";
+
+
+    console.log("이름: " + name + " 나이: " + age + " 주소: " + address);
+    console.log(`이름: ${name} 나이: ${age} 주소: ${address}`);
+
+    str4 = `
+
+    한국
+
+    여백의 미...
+
+            한 박자 쉬고 두 박자 쉬고 
+                        세 박자 마저 쉬고 들어 간...
+
+                        다...
+
+    `;
+    
+    console.log(str4);
+
+    str1 = `
+    이름 : ${name}
+    나이 : ${age}
+    주소 : ${address}
+
+    `
+
+    console.log(str1)
+
+</script>

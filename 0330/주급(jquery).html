@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+</head>
+<body>
+    이름 : <input type = "text" id = "name"><br/>
+    근무시간 : <input type = "text" id = "worktime"><br/>
+    시간당급여액 : <input type = "text" id = "perpay"><br/>
+
+    <button type = "button" id = "btnConfirm">확인</button>&nbsp;&nbsp;
+    <button type = "button" id = "btnClear">새로입력</button><br/>
+
+
+    <input type = "text" id = "result"><br/>
+</body>
+</html>
+<script>
+    $(document).ready( ()=>{
+        $("#btnConfirm").click( ()=>{
+            name = $("#name").val();
+            worktime = parseInt($("#worktime").val());
+            perpay = parseInt($("#perpay").val());
+
+            base_pay = worktime * perpay;
+            over_pay = 0;
+
+            if(worktime>20){
+                over_pay = (worktime-20)*perpay*1.5;
+            }
+
+            msg = `${name}님의 기본급은 ${base_pay}원이고 초과수당은 ${over_pay}원, 합계액은 ${base_pay+over_pay}원입니다!`
+            // "'name'님의 기본급은 'base_pay'원이고 초과수당은 'over_pay'원, 합계액은 'base_pay'+'over_pay'원입니다!"
+            $("#result").val(msg);
+        })
+
+        $("#btnClear").click( ()=>{
+            $("#name").val("");
+            $("#worktime").val("");
+            $("#perpay").val("");
+            $("#result").val("");
+
+            // $("input").val("");
+        })
+    })
+</script>

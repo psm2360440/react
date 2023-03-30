@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="/js/jquery-3.6.4.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <p>여기를 눌러보슈</p>
+    <p id = "test1">여기 내용을 바꿔보슈</p>
+</body>
+</html>
+<script>
+    //window.onload 대신
+    $(document).ready(()=>{
+        $("p").click(()=>{
+            alert("Pressed!");
+        })
+
+        $("#test1").click(()=>{
+            $("#test1").html("<h1>Changed!</h1>");
+        })
+    })
+
+
+</script>

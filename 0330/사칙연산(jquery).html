@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    x : <input type = "text" id = "x"><br/>
+    y : <input type = "text" id = "y"><br/>
+    result : <input type = "text" id = "result" readonly><br/>
+
+    <button type = "button" id = "btnAdd">+</button>
+    <button type = "button" id = "btnSub">-</button>
+    <button type = "button" id = "btnMul">*</button>
+    <button type = "button" id = "btnDiv">/</button>
+
+</body>
+</html>
+<script>
+    $(document).ready(()=>{
+        $("#btnAdd").click( ()=>{
+            x = parseInt($("#x").val());
+            y = parseInt($("#y").val());
+            result = x+y;
+            $("#result").val(result);
+        })
+
+        $("#btnSub").click( ()=>{
+            x = parseInt($("#x").val());
+            y = parseInt($("#y").val());
+            result = x-y;
+            $("#result").val(result);
+        })
+
+        $("#btnMul").click( ()=>{
+            x = parseInt($("#x").val());
+            y = parseInt($("#y").val());
+            result = x*y;
+            $("#result").val(result);
+        })
+
+        $("#btnDiv").click( ()=>{
+            x = parseInt($("#x").val());
+            y = parseInt($("#y").val());
+            result = x/y;
+            $("#result").val(result);
+        })
+    })
+</script>

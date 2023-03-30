@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>함수의 기본값</h1>
+</body>
+</html>
+<script>
+    // 기본매개변수 - 매개 변수에 기본값을 부여한다.
+    // 자바에 있지만 자스에 없는 오버로딩의 기능을 대신한다 할 수 있다.
+    function myFunc1(a,b,c){
+        return a+b+c;
+    }
+
+    console.log(myFunc1());
+    console.log(myFunc1(1));
+    console.log(myFunc1(1,2));
+    console.log(myFunc1(1,2,3));
+
+
+
+
+    //  매개변수에 기본값을 부여한다.
+    //  함수 호출시에 매개변수위치에 값을 안 주면 기본값을 적용하여 연산한다.
+    //  매개변수에 기본값을 부여할 때
+    //  기본값을 부여하지 않는변수들은 먼저 기술하고
+    //  기본값을 부여하는 변수들을 나중에 기술해야 한다.
+    //  함수의 이름은 무조건 달라야 한다.
+    //  오버로딩을 지원하지 않지만,
+    //  기본값을 통해 오버로딩과 동일한 효과를 얻는다.
+    function myFunc2(a=10,b=20,c=30){
+        return a+b+c;
+    }
+
+    console.log(myFunc2());
+    console.log(myFunc2(1));
+    console.log(myFunc2(1,2));
+    console.log(myFunc2(1,2,3));
+
+
+    //  1~10까지의 합계를 구하는 함수
+    function sigma(limit =10) {
+        //  에러체크를 함수 들어가자 마자 하고 return으로 종료
+        if(limit < 0){
+            console.log("음수 넣지 마라!")
+            return 0;
+            //  return  구문은 값을 보내기 위한 용도만으로 쓰는 게 아니고
+            //  함수를 종료하기 위한 목적으로도 사용한다.
+        }
+        sum = 0;
+        for (i=1; i<=limit; i++){
+            sum += i;
+        }
+        return sum; //  반환값은 하나만 또는 없거나
+    }
+
+    console.log(sigma());
+    let result = sigma();
+    console.log(result);
+    console.log(sigma(100));
+    console.log(sigma(1000));
+    console.log(sigma(-1));
+
+
+</script>

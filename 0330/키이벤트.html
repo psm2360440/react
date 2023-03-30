@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p1>키보드이벤트</p1>
+    name : <input type = "text" id ="fname" onkeydown="goKeyDown()" onkeypress="goKeyPress()" onkeyup="goKeyUp()"></br>
+</body>
+</html>
+<script>
+    function goKeyDown(){
+        console.log(event.keyCode);
+        console.log("keydown");
+    };
+
+    function goKeyPress(){
+        console.log(event.key); //   눌린 키에 대한 정보
+        console.log(event.keyCode);
+        console.log("keypress");
+    };
+    
+    function goKeyUp(){
+        x = document.getElementById("fname"); // 객체 가져오기
+        x.value = x.value.toUpperCase();
+    };
+
+    //키프레스 잘 안 쓰고, 보통 키업을 많이 씀.
+</script>
