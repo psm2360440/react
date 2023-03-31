@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <form action = "">
+        <input type = "hidden" name = "seq" id = "seq"><br/>
+
+        이름 : <input type = "text" id = "username" name = "username"><br/>
+
+        좋아하는 분야<br/>
+        <input type = "checkbox" name = "interest" value = "1">JAVA <br/>
+        <input type = "checkbox" name = "interest" value = "2">파이썬 <br/>
+        <input type = "checkbox" name = "interest" value = "3">C <br/>
+        <input type = "checkbox" name = "interest" value = "4">C# <br/>
+        <input type = "checkbox" name = "interest" value = "5">C++ <br/>
+        <input type = "checkbox" name = "interest" value = "6">Javascript <br/>
+        <input type = "checkbox" name = "interest" value = "7">빅데이터 <br/>
+        <input type = "checkbox" name = "interest" value = "8">php <br/>
+
+
+        <button type = "button" id = "btnSelectAll">전체 선택</button>
+        <button type = "button" id = "btnReleaseAll">전체 해제</button>
+
+
+        <button type = "button" id = "btnRead"> 데이터 읽기</button>
+    </form>
+</body>
+</html>
+<script>
+    $(document).ready( ()=>{
+        //값 넣기
+        $("input[type=hidden][name=seq]").val("777");
+        $("input[type=text][name=username]").val("박선미");
+
+        $("#seq").val("9999");
+        $("#username").val("김보고");
+        $("input[type=checkbox][name=interest]").eq(1).prop("checked", true);
+        $("input[type=checkbox][name=interest]").eq(3).prop("checked", true);
+        //checkbox에서 'eq'는 equals 뜻.
+
+        //값 읽기
+        $("#btnRead").click( ()=>{
+            console.log($("input[type=hidden][name=seq]").val() );
+            console.log($("input[type=text][name=username]").val() );
+
+            //checkbox로 선택한 항목 가져오기
+            let result = "";
+
+            //$("태그명").each -> forEach문처럼 가져오는 모든 태그명을 돌림
+            //'this'를 사용할 경우 화살표함수(=>)를 사용하지 못해서 function을 그대로 써 줌
+            
+            $("input[type=checkbox][name=interest]:checked").each( function(){
+                //각자 객체 전달
+                result +=$(this).val()+",";
+                //선택 안 된 checkbox는 비어있음.
+            })
+
+            alert(result);
+        })
+
+        $("#btnSelectAll").click( ()=>{
+            $("input[type=checkbox][name=interest]").prop("checked",true);
+        })
+
+        $("#btnReleaseAll").click( ()=>{
+            $("input[type=checkbox][name=interest]").prop("checked",false);
+        })
+    })
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <!--form 태그는 값을 서버로 전달하는 역할을 함.
+    단, 한 페이지에 하나만 써야 함.
+    <form>
+        <input> form 태그 안에 있는 input의 값 서버로 전달
+    </form>
+    <form>
+        <form>
+            <input> 중첩 form 태그 안에 있는 input  값 전달 X!
+        </form>
+    </form>-->
+    <form>
+        암호 : <input type = "hidden" name = "userpwd" value = "99999"><br/>
+        아이디 : <input type = "text" name = "userid" ><br/>
+        이름 : <input type = "text" name = "username" ><br/>
+        <input type = "submit" value = "보내기" ><br/>
+
+        
+        <!--
+        서버로 데이터를 전송하는 방식은 크게  GET 방식과 POST 방식이다
+        클라이언트 ------------------------------------------- > 서버
+                        header(선발대), 기초적인 정보를 먼저 보낸다.
+                        예를 들어, 브라우저 정보나 1000 byte 이내의 가벼운 정보
+                        body(후발대), 중요한 정보, 파일 전송, 이미지 전송
+                        많은 양의 데이터
+        GET방식 : header만 보낸다.
+                  보안이 필요 없는 1000 바이트 이내의 가벼운 정보만 보내고자 할 때 사용
+                  '?키1=값1&키2=값2&키3=값3'의 형태인데 한글의 경우 다른 문자로 가공되어 전달된다.
+                  그래서 GET방식으로 한글을 보내려면 encoding이라는 작업을 전송
+                  받는 쪽에서는 decoding이라는 작업을 해야 한다.
+                  요즘은 브라우저가 이 작업을 대신 해주기도 함.
+                  (브라우저 버전따라 다르게 작동하므로 한글은 전송하지 않거나 별도의 작업을 하는 것이 안정적)
+        POST방식 : header 먼저 보내고 다른 정보는 body에 담아 보낸다.
+                   보내야 할 데이터가 많을 때 사용. 사실상 무제한이지만 30MB 이내로 제한을 한다.
+                   파일 전송, 이미지 전송, 대용량 데이터 등 중요정보들
+        -->
+    </form>
+</body>
+</html>
+<script>
+
+</script>
