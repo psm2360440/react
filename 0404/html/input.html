@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action = "/login">
+        <!--
+            form에 있는 중요 속성
+            method : 서버로 정보를 보내는 방법을 기술한다.  get, post 등
+            action : 서버에서 어떤 url이 정보를 받아서 처리할 지를 지정해야 한다.
+            app.use(url, )이 존재해야 한다. 이 속성을 생략하면 자신의 url을 다시 호출한다.
+            method를 생략하면 get방식이다.
+            form 태그 안에 넣어보내지 않으면 서버로 정보가 전달되지 않는다.
+            속성명에 name을 쓰면 제대로 전달 되지 않는다. (input 태그의 name과 충돌)
+            그러므로  'userid'등을 써서 받을 것. 
+        -->
+        
+        아이디 : <input type = "text" name = "userid"><br/> 
+        패스워드 : <input type = "text" name = "password"><br/>
+
+        <input type = "submit" value = "보내기">
+    </form>
+</body>
+</html>

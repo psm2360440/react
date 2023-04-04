@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name = "myform" action = "/calc" method = "get">
+        <input type = "hidden" name = "operator" id = "operator">
+        x : <input type = "text" name = "x" id = ""><br/>
+        y : <input type = "text" name = "y" id = ""><br/>
+        
+
+        <buttion type = "button" id = "btnAdd">더하기</buttion>&nbsp;&nbsp;
+        <buttion type = "button" id = "btnSub">빼기</buttion>&nbsp;&nbsp;
+        <buttion type = "button" id = "btnMul">곱하기</buttion>&nbsp;&nbsp;
+        <buttion type = "button" id = "btnDiv">나누기</buttion>&nbsp;&nbsp;
+    </form>
+</body>
+</html>
+<script>
+    window.onload=()=>{
+        let btnAdd = document.getElementById("btnAdd");
+        let btnSub = document.getElementById("btnSub");
+        let btnMul = document.getElementById("btnMul");
+        let btnDiv = document.getElementById("btnDiv");
+    
+        btnAdd.addEventListener("click", ()=>{
+            document.getElementById("operator").value = "1";
+            //form객체에 대한 접근 방법은 document.name
+            document.myform.submit();
+        })
+
+        btnSub.addEventListener("click", ()=>{
+            document.getElementById("operator").value = "2";
+            document.myform.submit();
+        })
+
+        btnMul.addEventListener("click", ()=>{
+            document.getElementById("operator").value = "3";
+            document.myform.submit();
+        })
+
+        btnDiv.addEventListener("click", ()=>{
+            document.getElementById("operator").value = "4";
+            document.myform.submit();
+        })
+}
+</script>

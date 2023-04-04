@@ -1,0 +1,10 @@
+
+
+board.js(라우팅 /board/list->board.js응답을 하고 데이터와 board_list.ejs를 묶어준다.
+                boardList데이터를 ejs엔진의 render함수가 데이터와 ejs파일을 묶는다)
+                express에서 view engine이라는 환경변수에 ejs를 연결하면
+                response.render함수에 ejs파일과 데이터를 묶는다
+
+board_list.ejs  목록보기
+board_view.ejs  상세보기
+board_write.ejs 글쓰기 / board/write로 이동하고 등록/save가 되고 나면 redirect로 이동해야 하는가

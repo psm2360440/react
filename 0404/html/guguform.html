@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name = "myform" action = "/gugu" method = "get">
+        단 : <input type = "text" name = "dan" id = ""><br/>
+        
+        <buttion type = "button" id = "btnGugudan">구구단을 외자!</buttion>&nbsp;&nbsp;
+    </form>
+</body>
+</html>
+<script>
+    window.onload=()=>{
+        let btnGugudan = document.getElementById("btnGugudan");
+    
+    btnGugudan.addEventListener("click", ()=>{
+        // document.forms[0].submit(); 폼에 이름을 안 줬어도 가능
+        document.myform.submit();
+        })
+    }
+</script>
