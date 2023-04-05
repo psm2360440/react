@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>불멸의 사칙연산</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <form>
+        X : <input type = "text" name = "x" id = "x"><br/>
+        Y : <input type = "text" name = "y" id = "y"><br/>
+
+        Result : <input type = "text" name = "result" id = "result"><br/>
+
+        <button type = "button" id = "btnAdd">+</button>
+    </form>
+</body>
+</html>
+
+<script>
+    $(document).ready( ()=>{
+        $("#btnAdd").click(()=>{
+            //비동기모드 : 반환값 없음
+            $.ajax( {
+                url: "/ajax/add",
+                data:{"x":$("#x").val(), "y": $("#y").val()},
+                dataType: "json"   //결과를 json형식으로 가져오겠다.
+            })
+            .done( (res, status, error)=>{
+                console.log(res);
+                $("#result").val(res.result);
+            })
+            .fail( (res, status, error)=>{
+                console.log(status);
+                console.log(error);
+            })
+        })
+    })
+</script>

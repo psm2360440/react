@@ -1,0 +1,6 @@
+
+세걔의 디자인 : ejs
+                list.ejs  :  데이터 목록             /score/list/:pg
+                view.ejs  :  데이터 하나만 상세      /score/view/:선택항목id
+                write.ejs :                          /score/write - write페이지로 이동
+                                                     /score/save - 실제 저장 후 list로 이동
