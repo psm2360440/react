@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Third Assignment</title>
+</head>
+<body>
+    <form name = "score" action = "/calc" method = "get">
+        이름  <input type = "text" name = "studentId" id = ""><br/>
+        국어  <input type = "text" name = "kor" id = ""><br/>
+        영어  <input type = "text" name = "eng" id = ""><br/>
+        수학  <input type = "text" name = "mat" id = ""><br/>
+
+        <button type = "button" id = "btnCal">결과확인</button>&nbsp;&nbsp;
+        <div id = "result"></div>
+    </form>
+</body>
+</html>
+<script>
+    window.onload =()=>{
+        let btnCal = document.getElementById("btnCal");
+
+        btnCal.addEventListener("click",()=>{
+            document.score.submit();
+        })
+    }
+</script>
