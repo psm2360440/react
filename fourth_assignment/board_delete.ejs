@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+      a:link { color: rgb(194, 194, 194); text-decoration: none;}	
+      a:visited { color: rgb(194, 194, 194); text-decoration: none;}	
+      a:hover { color: hsl(259, 81%, 81%); text-decoration: underline;}
+     </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/board">DIGI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">JAVA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">React</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">Ajax</a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">JavaScript</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">SQL</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">php</a>
+          </li>
+        </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+    <div class="container" style="margin-top:80px">
+        <h2>DIGI Campus 2기</h2>
+        <form id = "myform">
+          <input type = "hidden" id = "pwd" name = "pwd" value = "<%=boardList["pwd"]%>">
+          <input type = "hidden" id = "id" name = "id" value = "<%=boardList["id"]%>">
+        <table class="table table-hover " style="margin-top: 30px;">
+            <colgroup>
+                <col width="25%">
+                <col width="*">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th colspan="2" style="text-align: center;">삭제를 위해 게시글 비밀번호를 입력하세요!</th>
+              </tr>
+              <tr>
+                <td>비밀번호</td>
+                <td>
+                    <div class="mb-3" style="margin-top:13px;">
+                        <input type="password" class="form-control" id="inputPwd" name="inputPwd" 
+                        placeholder="비밀번호를 입력하세요!" >
+                    </div>
+                </td>
+              </tr>                  
+            </tbody>
+          </table>
+        </form>
+       
+          <div class="container mt-3" style="text-align:right;">
+            <a href="/board" class="btn btn-secondary">LIST</a>
+            <input type="submit" id = "btnConfirm" class="btn btn-secondary" value="CONFIRM">
+          </div>
+          
+    </div>
+</body>
+</html>
+<script>
+      $(document).ready( ()=>{
+        let id = $("#id").val();
+      $("#btnConfirm").click( ()=>{
+        //input태그 type을 hidden으로 하여 id와 비밀번호 값을 form에 뿌려주고
+        //실제 입력받은 비밀번호와 일치 여부 확인하여 삭제 진행.
+        if ( $("#inputPwd").val()!=$("#pwd").val()){
+            alert("비밀번호가 일치하지 않습니다!");
+            $("#inputPwd").val('');
+        } else {
+        $("#myform").prop("method", "post");
+        $("#myform").prop("action", "/board/delete");
+        $("#myform").submit();
+        alert("삭제되었습니다!");
+        }
+      })
+  })
+</script>
