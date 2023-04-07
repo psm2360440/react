@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+<form id = "myform" name = "myform">
+  <%-include('../layout/header.ejs')%>
+
+<div class="container mt-3">
+  <h1>LOG IN</h1>
+
+  <div class="input-group mb-3">
+    <input type="text" id = "userid" name = "userid" class="form-control" placeholder="ID">
+  </div>
+
+  <div class="input-group mb-3">
+    <input type="password" id = "password" name = "password" class="form-control" placeholder="PASSWORD">
+  </div>
+</form>	
+
+  
+  	<div class="container" style="text-align:right">
+	 
+	  <div class="btn-group">
+	    
+      <button type="button" class="btn btn-dark" id = "btnLogin">LOGIN</button>&nbsp;&nbsp;
+      <a href="/member" class="btn btn-secondary">JOIN</a>&nbsp;&nbsp;
+      <a href="/member/find" class="btn btn-secondary">FIND</a>&nbsp;&nbsp;
+	  </div>
+	</div>
+
+</div>
+</body>
+</html>
+
+<script>
+$(document).ready( ()=>{
+  $("#btnLogin").click( ()=>{
+    let userid = $("#userid").val();
+    let password = $("#password").val();
+
+    $.ajax({
+      url: "/member/loginCheck",
+      data: {userid:userid, password:password},
+      method: "post",
+      dataType: "json"
+    })
+    .then( (result)=>{
+      if(result.result == "success"){
+        alert(`${userid}님 로그인되었습니다!`);
+        location.href = "/board";
+      } else {
+        alert("아이디와 비밀번호를 확인 후 입력해주세요!");
+        $("#userid").val('');
+        $("#password").val('');
+      }
+    })
+  });
+})
+</script>
