@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <%-include('./layout/header.ejs')%>
+    <h1 style="text-align: center; margin-top: 100px;" ><%= title %></h1>
+    <p style="text-align: center; margin-top: 70px;"><b>Welcome to <%= title %></b></p>
+    <%if(session["userid"]==undefined || session["userid"]==""){%>
+    <p style="text-align: center; margin-top: 50px;"">
+      <a href = "/member/register" class = "btn btn-secondary">JOIN</a>
+      <a href = "/member/login" class = "btn btn-secondary">LOGIN</a>
+    </p>
+    <%}else{%>
+      <p style="text-align: center;">
+        <%=session["username"]%>
+        <a href="/member/logout" class = "btn btn-secondary">LOGOUT</a>
+      </p>
+    <%}%>
+  </body>
+</html>
