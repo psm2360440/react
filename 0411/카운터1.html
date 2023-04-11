@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>자바스크립트</h1>
+    <input type = "number" name = "" id = "count"><br/>
+    <button type = "button" id = "increase">+</button>&nbsp;&nbsp;
+    <button type = "button" id = "decrease">-</button><br/>
+
+</body>
+</html>
+<script>
+    window.onload = ()=>{
+        document.getElementById("count").value = 0;
+        increase = document.getElementById("increase");
+        decrease = document.getElementById("decrease");
+        increase.addEventListener("click", ()=>{
+            document.getElementById("count").value =
+            parseInt(document.getElementById("count").value)+1;
+        })
+        decrease.addEventListener("click", ()=>{
+            document.getElementById("count").value =
+            parseInt(document.getElementById("count").value)-1;
+        })
+    }
+</script>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script scr = "https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src = "https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+</head>
+<body>
+    <div id = "root"></div>
+    <script type = "text/babel">
+        const {useState} = React;   //import임
+        
+        //함수기반 컴포넌트 위치 상관 없음,
+        //클래스는 ReactDOM.render 위에 있어야 한다.
+        class Mycomponent1 extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <h1>클래스기반</h1>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM .render(
+            <div>
+                <h1>Counter</h1>    
+                <Counter/>
+                <Mycomponent1/>
+            </div>,
+            document.getElementById("root") //전체 구조의 뿌리가 되는 태그
+        );
+
+
+        function Counter(pr){
+            //변수를 state라는 공간에 저장한다.
+            //함수의 변수를 만들면 함수 종료하면 변수가 소멸한다.
+            //유지를 위하여 상태정보를 state라는 공간에 저장해야 한다.
+            const [number, setNumber] = useState(0);
+            //      변수,  변수의 값을 바꾸는 함수 = useState (변수초기값)
+            const onIncrease = ()=>{
+                setNumber(number + 1);  //반드시 set함수에 의하여 값이 바뀌어야  react가 화면에 값을 바꾸는 랜더링 작업을 진행한다.
+            }
+            
+            const onDecrease = ()=>{
+                setNumber(number - 1);
+            }
+
+
+            return(
+                <div>
+                    <h3>{number}</h3>
+                    <button type = "button" onClick = {onIncrease}>+</button>
+                    <button type = "button" onClick = {onDecrease}>-</button>
+                </div> 
+            )
+        }
+    </script>
+</body>
+</html>

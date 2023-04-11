@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id = "root"></div>
+    <script type = "text/babel">
+        ReactDOM .render(
+            <div>
+                <h1>Hello React</h1>    
+                <App/>
+                <App/>
+                <App/>
+                <App/>
+                <App/>
+                <App/>
+                <App/>
+                <App/>
+            </div>,
+            document.getElementById("root") //전체 구조의 뿌리가 되는 태그
+        );
+
+        //컴포넌트 작성하기
+        //1. class  기반 컴포넌트 : class (초창기)
+        //2. 함수 기반 컴포넌트 : 재작년부터 
+
+        //함수기반 컴포넌트
+        function App(){
+            //return  템플릿
+            //반드시  root태그가 존재해야 한다
+            //html 태그를 트리구조로 만들어야 한다
+
+            const onClick = ()=>{
+                alert("!");
+            }
+            return(
+                <div>
+                    <h1>함수컴포넌트</h1>
+                    <button type = "button" onClick = {onClick}>클릭</button>
+                </div> 
+            )
+        }
+    </script>
+</body>
+</html>
