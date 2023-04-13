@@ -1,0 +1,13 @@
+
+<리엑트>
+FrontEnd : 화면 UI, 디자인
+           input 사용자입력을 받아서 -------------------->Axios
+                                                         (Ajax라이브러리)
+                                                         비동기로 서버와 정보를 주고받는 역할(데이터는 Ajax형태로 주고받음)
+
+<강의중에는 mariaDB, nodejs를 쓰고 있음>
+BackEnd : nodejs 기반의 express - DB서버에 붙어서 데이터 읽고 쓰기
+FrontEnd가 Axios를 통해서 HeroList를 요구한다.  
+Axios가 BackEnd한테 요청을 하면 DB서버에서 데이터를 읽어 Json형태로 담아  Axios로 보냄
+
+FrontEnd---------------------------------------------Axios--------------------------------------------BackEnd
