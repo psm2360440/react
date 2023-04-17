@@ -1,0 +1,36 @@
+<<백현숙 강사님 프론트 심화 복습>>
+1. 모던스크립트 (모던스크립트 Deep Dive 좋음,,,)
+    json, ajax기술을 지원하는 모던스크립트가 promise, async, await
+    ex)
+        Promise( ()=>{})
+        .then( ()=>{
+            Promise( ()=>{})
+            .then.( ()=>{
+
+            })
+        })
+
+        -------------------> 콜백의 지옥
+        * async & await로 개선한 것( 현재 대 유행으로 아래와 같이 쓰임 )
+        async function A(){
+        }
+        let result = await A();
+
+2. 함수 만들 때 주의할 점
+    1) 한 번에 한 가지 기능만!
+    2) 입력과 출력을 명확하게 지정할 것 ( 입력: 매개변수 / 출력: 반환값 )
+    3) 함수 안에서의 if문 쓸 때 ( 오류처리 할 때 ) 가급적 else를 자제할 것.
+    ex)
+        if (error 1){
+            error  처리 
+            return;
+        }
+        if (error 2){
+            error2 처리
+            return;
+        }
+        if (error3){
+            error3
+            return;
+        }
+        그 후의 정상처리 (else 로 이어가지 말 것)
